@@ -1,0 +1,1097 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Remon Hanna | Graphic Design &amp; Laser Cutting Artisan</title>
+<meta name="description" content="Remon Hanna (Remon Anwer) - graphic designer and laser cutting &amp; engraving artisan with 20+ years of experience. Custom wood signs, bookmarks, ornaments and personalised gifts.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Work+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<!-- Favicon: simple wood-tag mark -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%232a1810'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='30' fill='%23d9b98a' text-anchor='middle'%3ER%3C/text%3E%3C/svg%3E">
+
+<style>
+  :root{
+    --wood-espresso:#241610;
+    --wood-walnut:#4a2f1c;
+    --wood-oak:#8a5a34;
+    --wood-birch:#d9b98a;
+    --paper-cream:#f4ecd8;
+    --char:#18100d;
+    --ember:#c1662f;
+    --ember-bright:#e08543;
+    --sage:#7c8863;
+    --line:rgba(217,185,138,0.18);
+    --shadow:0 20px 50px -20px rgba(0,0,0,0.5);
+    --radius:2px;
+  }
+
+  *{box-sizing:border-box; margin:0; padding:0;}
+
+  html{scroll-behavior:smooth;}
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important; scroll-behavior:auto !important;}
+  }
+
+  body{
+    font-family:'Work Sans', sans-serif;
+    background:var(--paper-cream);
+    color:var(--char);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+
+  img{max-width:100%; display:block;}
+  a{color:inherit;}
+
+  h1,h2,h3,h4{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    line-height:1.08;
+    letter-spacing:-0.01em;
+  }
+
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.72rem;
+    letter-spacing:0.22em;
+    text-transform:uppercase;
+    color:var(--ember);
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:26px; height:1px;
+    background:var(--ember);
+    display:inline-block;
+  }
+
+  .wrap{
+    max-width:1180px;
+    margin:0 auto;
+    padding:0 32px;
+  }
+
+  /* ---------- laser line divider (signature element) ---------- */
+  .laser-divider{
+    position:relative;
+    height:34px;
+    margin:0 auto;
+    overflow:hidden;
+  }
+  .laser-divider svg{width:100%; height:100%; display:block;}
+  .laser-divider .beam-path{
+    fill:none;
+    stroke:var(--ember);
+    stroke-width:1.4;
+    stroke-dasharray:6 6;
+    opacity:0.55;
+  }
+  .laser-divider .beam-dot{
+    fill:var(--ember-bright);
+    filter:drop-shadow(0 0 6px var(--ember-bright));
+  }
+
+  /* ---------- NAV ---------- */
+  header.site-nav{
+    position:fixed; top:0; left:0; right:0;
+    z-index:100;
+    background:rgba(36,22,16,0.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid rgba(217,185,138,0.14);
+    transition:background 0.3s ease;
+  }
+  .nav-inner{
+    max-width:1180px;
+    margin:0 auto;
+    padding:16px 32px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+  }
+  .brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    text-decoration:none;
+    color:var(--wood-birch);
+  }
+  .brand-mark{
+    width:38px; height:38px;
+    border:1.5px solid var(--wood-oak);
+    border-radius:3px;
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:1.15rem;
+    color:var(--ember-bright);
+    background:linear-gradient(160deg, rgba(217,185,138,0.08), transparent);
+    flex-shrink:0;
+  }
+  .brand-text{
+    display:flex;
+    flex-direction:column;
+    line-height:1.15;
+  }
+  .brand-text strong{
+    font-family:'Fraunces', serif;
+    font-size:1.05rem;
+    letter-spacing:0.01em;
+  }
+  .brand-text span{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.62rem;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--wood-oak);
+  }
+
+  nav.nav-links{
+    display:flex;
+    gap:36px;
+    list-style:none;
+  }
+  nav.nav-links a{
+    text-decoration:none;
+    color:var(--wood-birch);
+    font-size:0.88rem;
+    letter-spacing:0.03em;
+    position:relative;
+    padding:4px 0;
+    opacity:0.85;
+    transition:opacity 0.2s ease;
+  }
+  nav.nav-links a:hover, nav.nav-links a:focus-visible{opacity:1;}
+  nav.nav-links a::after{
+    content:"";
+    position:absolute; left:0; right:0; bottom:-2px;
+    height:1px;
+    background:var(--ember-bright);
+    transform:scaleX(0);
+    transform-origin:left;
+    transition:transform 0.25s ease;
+  }
+  nav.nav-links a:hover::after, nav.nav-links a:focus-visible::after{transform:scaleX(1);}
+
+  .nav-cta{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.75rem;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    color:var(--wood-espresso);
+    background:var(--wood-birch);
+    padding:10px 18px;
+    border-radius:2px;
+    text-decoration:none;
+    transition:background 0.2s ease, transform 0.2s ease;
+    white-space:nowrap;
+  }
+  .nav-cta:hover{background:var(--ember-bright); color:#fff; transform:translateY(-1px);}
+
+  .burger{
+    display:none;
+    flex-direction:column;
+    gap:5px;
+    background:none;
+    border:none;
+    cursor:pointer;
+    padding:6px;
+  }
+  .burger span{width:24px; height:2px; background:var(--wood-birch); display:block;}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    background:
+      radial-gradient(ellipse at 18% 20%, rgba(193,102,47,0.16), transparent 55%),
+      radial-gradient(ellipse at 82% 78%, rgba(124,136,99,0.10), transparent 50%),
+      linear-gradient(180deg, var(--wood-espresso), #1b1108 70%, var(--char));
+    overflow:hidden;
+    padding:140px 0 90px;
+  }
+  .hero::before{
+    /* wood grain texture */
+    content:"";
+    position:absolute; inset:0;
+    background-image:repeating-linear-gradient(178deg, rgba(217,185,138,0.025) 0px, rgba(217,185,138,0.025) 1px, transparent 2px, transparent 9px);
+    pointer-events:none;
+  }
+  .hero-inner{
+    position:relative;
+    z-index:2;
+    display:grid;
+    grid-template-columns:1.1fr 0.9fr;
+    gap:60px;
+    align-items:center;
+    width:100%;
+  }
+  .hero-eyebrow{
+    color:var(--ember-bright);
+  }
+  .hero h1{
+    color:var(--paper-cream);
+    font-size:clamp(2.6rem, 5.4vw, 4.4rem);
+    margin:22px 0 8px;
+  }
+  .hero h1 em{
+    font-style:italic;
+    color:var(--ember-bright);
+  }
+  .hero .alt-name{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.85rem;
+    letter-spacing:0.06em;
+    color:var(--wood-oak);
+    margin-bottom:22px;
+  }
+  .hero p.lede{
+    color:rgba(244,236,216,0.78);
+    font-size:1.08rem;
+    max-width:46ch;
+    margin-bottom:34px;
+  }
+  .hero-ctas{
+    display:flex;
+    gap:16px;
+    flex-wrap:wrap;
+    margin-bottom:48px;
+  }
+  .btn{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.78rem;
+    letter-spacing:0.05em;
+    text-transform:uppercase;
+    text-decoration:none;
+    padding:15px 26px;
+    border-radius:2px;
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    transition:transform 0.2s ease, background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  }
+  .btn-primary{
+    background:var(--ember);
+    color:#fff9f2;
+  }
+  .btn-primary:hover{background:var(--ember-bright); transform:translateY(-2px);}
+  .btn-ghost{
+    border:1px solid rgba(217,185,138,0.4);
+    color:var(--wood-birch);
+  }
+  .btn-ghost:hover{border-color:var(--wood-birch); background:rgba(217,185,138,0.06); transform:translateY(-2px);}
+
+  .hero-stats{
+    display:flex;
+    gap:40px;
+  }
+  .hero-stats div{border-left:1px solid rgba(217,185,138,0.25); padding-left:16px;}
+  .hero-stats strong{
+    font-family:'Fraunces', serif;
+    font-size:1.9rem;
+    color:var(--wood-birch);
+    display:block;
+  }
+  .hero-stats span{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.68rem;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--wood-oak);
+  }
+
+  .hero-visual{
+    position:relative;
+    aspect-ratio:4/5;
+  }
+  .hero-visual .frame{
+    position:absolute;
+    border-radius:3px;
+    overflow:hidden;
+    box-shadow:var(--shadow);
+    border:1px solid rgba(217,185,138,0.2);
+  }
+  .hero-visual .frame img{width:100%; height:100%; object-fit:cover;}
+  .hero-visual .f1{ width:66%; aspect-ratio:1/1; top:0; right:0; z-index:2;}
+  .hero-visual .f2{ width:52%; aspect-ratio:4/5; bottom:0; left:0; z-index:3; box-shadow:0 25px 60px -15px rgba(0,0,0,0.65);}
+  .hero-visual .f3{ width:40%; aspect-ratio:1/1; top:14%; left:6%; z-index:1; opacity:0.9;}
+
+  .scroll-cue{
+    position:absolute;
+    bottom:28px; left:50%;
+    transform:translateX(-50%);
+    z-index:3;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:8px;
+    color:var(--wood-oak);
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.62rem;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    animation:floaty 2.6s ease-in-out infinite;
+  }
+  .scroll-cue .line{width:1px; height:26px; background:linear-gradient(var(--ember-bright), transparent);}
+  @keyframes floaty{0%,100%{transform:translate(-50%,0);} 50%{transform:translate(-50%,8px);}}
+
+  section{padding:120px 0;}
+  .section-head{max-width:640px; margin-bottom:60px;}
+  .section-head h2{font-size:clamp(2rem, 3.6vw, 2.9rem); margin-top:16px;}
+  .section-head p{margin-top:18px; color:rgba(24,16,13,0.68); font-size:1.05rem;}
+
+  /* ---------- ABOUT ---------- */
+  .about{background:var(--paper-cream); position:relative;}
+  .about-grid{
+    display:grid;
+    grid-template-columns:0.85fr 1.15fr;
+    gap:70px;
+    align-items:start;
+  }
+  .about-portrait{
+    position:sticky;
+    top:110px;
+  }
+  .about-portrait .tag{
+    background:var(--wood-espresso);
+    color:var(--wood-birch);
+    padding:26px 24px;
+    border-radius:3px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.78rem;
+    line-height:1.9;
+    box-shadow:var(--shadow);
+  }
+  .about-portrait .tag b{color:var(--ember-bright); display:block; font-family:'Fraunces',serif; font-size:1.3rem; margin-bottom:6px;}
+  .about-copy p{font-size:1.08rem; color:rgba(24,16,13,0.82); margin-bottom:22px; max-width:62ch;}
+  .about-copy p:first-child{
+    font-family:'Fraunces', serif;
+    font-size:1.35rem;
+    font-weight:500;
+    color:var(--wood-espresso);
+    line-height:1.45;
+  }
+
+  .timeline{
+    margin-top:44px;
+    border-top:1px solid rgba(24,16,13,0.14);
+  }
+  .timeline-row{
+    display:grid;
+    grid-template-columns:110px 1fr;
+    gap:24px;
+    padding:20px 0;
+    border-bottom:1px solid rgba(24,16,13,0.1);
+  }
+  .timeline-row .yr{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.8rem;
+    color:var(--ember);
+    letter-spacing:0.04em;
+  }
+  .timeline-row h4{font-size:1.05rem; margin-bottom:4px;}
+  .timeline-row p{color:rgba(24,16,13,0.65); font-size:0.95rem;}
+
+  /* ---------- SERVICES ---------- */
+  .services{
+    background:var(--wood-espresso);
+    color:var(--paper-cream);
+    position:relative;
+  }
+  .services .section-head p{color:rgba(244,236,216,0.68);}
+  .services .eyebrow{color:var(--ember-bright);}
+  .service-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:2px;
+    background:rgba(217,185,138,0.15);
+    border-radius:4px;
+    overflow:hidden;
+  }
+  .service-card{
+    background:var(--wood-espresso);
+    padding:48px 42px;
+    position:relative;
+  }
+  .service-card .num{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.72rem;
+    color:var(--wood-oak);
+    letter-spacing:0.1em;
+    margin-bottom:22px;
+    display:block;
+  }
+  .service-card h3{font-size:1.7rem; color:var(--wood-birch); margin-bottom:16px;}
+  .service-card p{color:rgba(244,236,216,0.68); margin-bottom:26px;}
+  .service-card ul{list-style:none;}
+  .service-card li{
+    padding:11px 0;
+    border-top:1px dashed rgba(217,185,138,0.2);
+    font-size:0.92rem;
+    color:rgba(244,236,216,0.85);
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .service-card li::before{
+    content:"";
+    width:6px; height:6px;
+    background:var(--ember-bright);
+    border-radius:50%;
+    flex-shrink:0;
+    box-shadow:0 0 8px var(--ember-bright);
+  }
+
+  /* ---------- PORTFOLIO ---------- */
+  .portfolio{background:var(--paper-cream);}
+  .filter-bar{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-bottom:44px;
+  }
+  .filter-btn{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.74rem;
+    letter-spacing:0.05em;
+    text-transform:uppercase;
+    background:transparent;
+    border:1px solid rgba(24,16,13,0.2);
+    color:var(--char);
+    padding:10px 18px;
+    border-radius:20px;
+    cursor:pointer;
+    transition:all 0.2s ease;
+  }
+  .filter-btn:hover{border-color:var(--ember);}
+  .filter-btn.active{
+    background:var(--wood-espresso);
+    border-color:var(--wood-espresso);
+    color:var(--wood-birch);
+  }
+
+  .gallery{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:24px;
+  }
+  .gallery-item{
+    position:relative;
+    border-radius:3px;
+    overflow:hidden;
+    aspect-ratio:1/1;
+    background:var(--wood-oak);
+    cursor:pointer;
+    box-shadow:0 10px 30px -14px rgba(0,0,0,0.3);
+  }
+  .gallery-item img{
+    width:100%; height:100%;
+    object-fit:cover;
+    transition:transform 0.5s ease;
+  }
+  .gallery-item:hover img{transform:scale(1.06);}
+  .gallery-item .cap{
+    position:absolute; left:0; right:0; bottom:0;
+    padding:18px 18px 16px;
+    background:linear-gradient(0deg, rgba(24,16,13,0.88), transparent);
+    color:var(--paper-cream);
+    opacity:0;
+    transform:translateY(8px);
+    transition:all 0.3s ease;
+  }
+  .gallery-item:hover .cap{opacity:1; transform:translateY(0);}
+  .gallery-item .cap span{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.62rem;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:var(--ember-bright);
+    display:block;
+    margin-bottom:3px;
+  }
+  .gallery-item .cap strong{font-family:'Fraunces', serif; font-weight:500; font-size:1rem;}
+  .gallery-item.hide{display:none;}
+
+  /* lightbox */
+  .lightbox{
+    position:fixed; inset:0; z-index:200;
+    background:rgba(15,9,6,0.94);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:40px;
+  }
+  .lightbox.open{display:flex;}
+  .lightbox img{max-width:min(900px, 90vw); max-height:82vh; border-radius:3px; box-shadow:0 30px 80px rgba(0,0,0,0.6);}
+  .lightbox-close{
+    position:absolute; top:26px; right:32px;
+    background:none; border:1px solid rgba(217,185,138,0.4);
+    color:var(--wood-birch);
+    width:42px; height:42px;
+    border-radius:50%;
+    cursor:pointer;
+    font-size:1.1rem;
+  }
+
+  /* ---------- CONTACT ---------- */
+  .contact{
+    background:linear-gradient(180deg, var(--paper-cream), #ece0c6);
+  }
+  .contact-grid{
+    display:grid;
+    grid-template-columns:0.9fr 1.1fr;
+    gap:60px;
+  }
+  .contact-info .info-row{
+    display:flex;
+    align-items:flex-start;
+    gap:16px;
+    padding:22px 0;
+    border-bottom:1px solid rgba(24,16,13,0.12);
+  }
+  .contact-info .info-row .ic{
+    width:40px; height:40px;
+    border-radius:50%;
+    background:var(--wood-espresso);
+    color:var(--ember-bright);
+    display:flex; align-items:center; justify-content:center;
+    flex-shrink:0;
+    font-size:1.1rem;
+  }
+  .contact-info .info-row a, .contact-info .info-row span.txt{
+    text-decoration:none;
+    font-family:'Fraunces', serif;
+    font-size:1.15rem;
+    color:var(--wood-espresso);
+  }
+  .contact-info .info-row .label{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.65rem;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:var(--wood-oak);
+    display:block;
+    margin-bottom:4px;
+  }
+
+  .contact-form{
+    background:#fffdf7;
+    border:1px solid rgba(24,16,13,0.1);
+    border-radius:4px;
+    padding:40px;
+    box-shadow:var(--shadow);
+  }
+  .form-row{margin-bottom:22px;}
+  .form-row label{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.68rem;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--wood-oak);
+    display:block;
+    margin-bottom:8px;
+  }
+  .form-row input, .form-row textarea, .form-row select{
+    width:100%;
+    border:none;
+    border-bottom:1.5px solid rgba(24,16,13,0.2);
+    background:transparent;
+    padding:10px 4px;
+    font-family:'Work Sans', sans-serif;
+    font-size:1rem;
+    color:var(--char);
+    outline:none;
+    transition:border-color 0.2s ease;
+  }
+  .form-row input:focus, .form-row textarea:focus, .form-row select:focus{border-color:var(--ember);}
+  .form-row textarea{resize:vertical; min-height:110px;}
+  .form-two{display:grid; grid-template-columns:1fr 1fr; gap:20px;}
+  .form-submit{
+    border:none;
+    cursor:pointer;
+    width:100%;
+    justify-content:center;
+    margin-top:6px;
+  }
+  .form-note{
+    font-size:0.82rem;
+    color:rgba(24,16,13,0.55);
+    margin-top:14px;
+  }
+  #form-status{
+    margin-top:16px;
+    font-size:0.9rem;
+    font-family:'IBM Plex Mono', monospace;
+    display:none;
+  }
+  #form-status.show{display:block;}
+  #form-status.ok{color:var(--sage);}
+  #form-status.err{color:#b3492f;}
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    background:var(--wood-espresso);
+    color:rgba(244,236,216,0.6);
+    padding:50px 0 30px;
+  }
+  .footer-inner{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:20px;
+    padding-bottom:30px;
+    border-bottom:1px solid rgba(217,185,138,0.12);
+    margin-bottom:24px;
+  }
+  footer .brand-text strong{color:var(--wood-birch);}
+  .footer-links{display:flex; gap:26px; list-style:none;}
+  .footer-links a{text-decoration:none; font-size:0.88rem; color:rgba(244,236,216,0.65);}
+  .footer-links a:hover{color:var(--ember-bright);}
+  .footer-bottom{
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;
+    font-size:0.78rem;
+    font-family:'IBM Plex Mono', monospace;
+    color:rgba(244,236,216,0.35);
+  }
+
+  a:focus-visible, button:focus-visible, .filter-btn:focus-visible{
+    outline:2px solid var(--ember-bright);
+    outline-offset:3px;
+  }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 900px){
+    nav.nav-links{
+      position:fixed; top:70px; left:0; right:0;
+      background:var(--wood-espresso);
+      flex-direction:column;
+      gap:0;
+      max-height:0;
+      overflow:hidden;
+      transition:max-height 0.3s ease;
+      border-bottom:1px solid rgba(217,185,138,0.14);
+    }
+    nav.nav-links.open{max-height:420px;}
+    nav.nav-links a{padding:18px 32px; width:100%; border-top:1px solid rgba(217,185,138,0.08);}
+    .nav-cta{display:none;}
+    .burger{display:flex;}
+
+    .hero-inner{grid-template-columns:1fr;}
+    .hero-visual{max-width:420px; margin:0 auto; aspect-ratio:1/1;}
+    .hero-visual .f3{display:none;}
+    .hero-stats{flex-wrap:wrap; gap:24px;}
+
+    .about-grid{grid-template-columns:1fr;}
+    .about-portrait{position:static;}
+
+    .service-grid{grid-template-columns:1fr;}
+
+    .gallery{grid-template-columns:repeat(2, 1fr);}
+
+    .contact-grid{grid-template-columns:1fr;}
+    .form-two{grid-template-columns:1fr;}
+
+    section{padding:80px 0;}
+  }
+
+  @media (max-width: 560px){
+    .wrap{padding:0 20px;}
+    .gallery{grid-template-columns:1fr 1fr; gap:14px;}
+    .hero-stats{gap:18px;}
+    .hero-ctas .btn{flex:1; justify-content:center;}
+    .contact-form{padding:26px;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="site-nav">
+  <div class="nav-inner">
+    <a href="#top" class="brand">
+      <span class="brand-mark">R</span>
+      <span class="brand-text">
+        <strong>Remon Hanna</strong>
+        <span>Remon Anwer &middot; Est. Craft</span>
+      </span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a href="#contact" class="nav-cta">Get a Quote</a>
+    <button class="burger" id="burgerBtn" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="wrap hero-inner">
+    <div class="hero-text">
+      <p class="eyebrow hero-eyebrow">Graphic Design &amp; Laser Craft</p>
+      <h1>Ideas, <em>burned</em><br>into wood.</h1>
+      <p class="alt-name">Remon Hanna &nbsp;/&nbsp; professionally known as Remon Anwer</p>
+      <p class="lede">Twenty plus years turning concepts into keepsakes &mdash; from brand design on screen to precision laser‑cut and engraved wood in hand. Every piece designed, tested and finished personally.</p>
+      <div class="hero-ctas">
+        <a href="#portfolio" class="btn btn-primary">View the Work</a>
+        <a href="#contact" class="btn btn-ghost">Start a Project</a>
+      </div>
+      <div class="hero-stats">
+        <div>
+          <strong>20+</strong>
+          <span>Years Experience</span>
+        </div>
+        <div>
+          <strong>2</strong>
+          <span>Crafts, One Vision</span>
+        </div>
+        <div>
+          <strong>1000s</strong>
+          <span>Pieces Cut &amp; Engraved</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <div class="frame f1"><img src="assets/images/signs-9.jpg" alt="" loading="lazy"></div>
+      <div class="frame f2"><img src="assets/images/bookmarks-2.jpg" alt="" loading="lazy"></div>
+      <div class="frame f3"><img src="assets/images/ornaments-14.jpg" alt="" loading="lazy"></div>
+    </div>
+  </div>
+  <div class="scroll-cue"><span>Scroll</span><span class="line"></span></div>
+</section>
+
+<div class="laser-divider" aria-hidden="true">
+  <svg viewBox="0 0 1200 34" preserveAspectRatio="none">
+    <line class="beam-path" x1="0" y1="17" x2="1200" y2="17"/>
+    <circle class="beam-dot" cx="0" cy="17" r="3.4">
+      <animate attributeName="cx" values="0;1200;0" dur="9s" repeatCount="indefinite"/>
+    </circle>
+  </svg>
+</div>
+
+<!-- ============ ABOUT ============ -->
+<section class="about" id="about">
+  <div class="wrap about-grid">
+    <div class="about-portrait">
+      <div class="tag">
+        <b>Remon Hanna</b>
+        Graphic Designer<br>
+        Laser Cutting &amp; Engraving Artisan<br>
+        <span style="color:var(--wood-oak)">Working professionally as</span> Remon Anwer<br><br>
+        <span style="color:var(--wood-oak)">Est. experience —</span> 20+ years
+      </div>
+    </div>
+    <div class="about-copy">
+      <p class="eyebrow">About</p>
+      <p>A designer first, and a maker by hand second - or maybe it's the other way round.</p>
+      <p>For over two decades, Remon has worked across graphic design and the craft of laser cutting and engraving, building a practice where a concept doesn't stop at the screen. It gets tested in wood, refined under the laser head, and finished by hand until the grain, the light and the message all sit right together.</p>
+      <p>That range is what shapes the work - a trained eye for layout, type and composition, paired with real technical command of laser settings, materials and finishing. The result is pieces that read as considered design objects, not just cut-outs: personalised signs, keepsakes, bookmarks and décor made to be kept, not just looked at.</p>
+      <p>Every commission, big or small, gets the same attention - from the first sketch to the final polish.</p>
+
+      <div class="timeline">
+        <div class="timeline-row">
+          <span class="yr">Design</span>
+          <div>
+            <h4>Graphic Design</h4>
+            <p>Brand marks, layout and custom artwork — designed to translate cleanly from screen to material.</p>
+          </div>
+        </div>
+        <div class="timeline-row">
+          <span class="yr">Craft</span>
+          <div>
+            <h4>Laser Cutting &amp; Engraving</h4>
+            <p>Precision work on wood and other materials — signs, ornaments, bookmarks and fully bespoke pieces.</p>
+          </div>
+        </div>
+        <div class="timeline-row">
+          <span class="yr">Finish</span>
+          <div>
+            <h4>Hand-Finished</h4>
+            <p>Every piece checked, sanded and finished by hand before it leaves the workshop.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">What Remon Does</p>
+      <h2>Two crafts. One standard.</h2>
+      <p>Design and fabrication under one roof — hire either service on its own, or bring a project that needs both from concept to finished piece.</p>
+    </div>
+    <div class="service-grid">
+      <div class="service-card">
+        <span class="num">01 / Design</span>
+        <h3>Graphic Design</h3>
+        <p>Clean, considered design work — built to look as good in print and on wood as it does on screen.</p>
+        <ul>
+          <li>Logo &amp; brand mark design</li>
+          <li>Custom illustration &amp; layout artwork</li>
+          <li>Print-ready &amp; laser-ready file prep</li>
+          <li>Packaging &amp; product artwork</li>
+        </ul>
+      </div>
+      <div class="service-card">
+        <span class="num">02 / Craft</span>
+        <h3>Laser Cutting &amp; Engraving</h3>
+        <p>Precision laser work on wood and beyond — from a single custom keepsake to small production runs.</p>
+        <ul>
+          <li>Custom signs &amp; wall plaques</li>
+          <li>Personalised bookmarks &amp; keepsakes</li>
+          <li>Ornaments, tags &amp; gift pieces</li>
+          <li>Bespoke &amp; made-to-order commissions</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PORTFOLIO ============ -->
+<section class="portfolio" id="portfolio">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Selected Work</p>
+      <h2>From the workshop.</h2>
+      <p>A look at recent pieces — filter by type, or browse the full collection.</p>
+    </div>
+
+    <div class="filter-bar" role="tablist" aria-label="Filter portfolio by category">
+      <button class="filter-btn active" data-filter="all">All Work</button>
+      <button class="filter-btn" data-filter="signs">Signs &amp; Plaques</button>
+      <button class="filter-btn" data-filter="bookmarks">Bookmarks</button>
+      <button class="filter-btn" data-filter="ornaments">Ornaments &amp; Décor</button>
+      <button class="filter-btn" data-filter="custom">Custom &amp; Personalised</button>
+    </div>
+
+    <div class="gallery" id="gallery">
+      <!-- Signs -->
+      <div class="gallery-item" data-cat="signs"><img src="assets/images/signs-9.jpg" alt="Laser-engraved wood plaque" loading="lazy"><div class="cap"><span>Signs &amp; Plaques</span><strong>Engraved Wood Plaque</strong></div></div>
+      <div class="gallery-item" data-cat="signs"><img src="assets/images/signs-3.jpg" alt="Custom laser-cut wood sign" loading="lazy"><div class="cap"><span>Signs &amp; Plaques</span><strong>Custom Wood Sign</strong></div></div>
+      <div class="gallery-item" data-cat="signs"><img src="assets/images/signs-8.jpg" alt="Engraved wall sign" loading="lazy"><div class="cap"><span>Signs &amp; Plaques</span><strong>Wall Sign</strong></div></div>
+      <div class="gallery-item" data-cat="signs"><img src="assets/images/signs-16.jpg" alt="Personalised wood plaque" loading="lazy"><div class="cap"><span>Signs &amp; Plaques</span><strong>Personalised Plaque</strong></div></div>
+      <div class="gallery-item" data-cat="signs"><img src="assets/images/signs-20.jpg" alt="Laser-cut sign detail" loading="lazy"><div class="cap"><span>Signs &amp; Plaques</span><strong>Wood Sign Detail</strong></div></div>
+      <div class="gallery-item" data-cat="signs"><img src="assets/images/signs-24.jpg" alt="Engraved sign" loading="lazy"><div class="cap"><span>Signs &amp; Plaques</span><strong>Engraved Sign</strong></div></div>
+      <div class="gallery-item" data-cat="signs"><img src="assets/images/signs-27.jpg" alt="Custom sign piece" loading="lazy"><div class="cap"><span>Signs &amp; Plaques</span><strong>Custom Sign</strong></div></div>
+
+      <!-- Bookmarks -->
+      <div class="gallery-item" data-cat="bookmarks"><img src="assets/images/bookmarks-2.jpg" alt="Laser-cut wood bookmarks with tassels" loading="lazy"><div class="cap"><span>Bookmarks</span><strong>Tasselled Bookmark Set</strong></div></div>
+      <div class="gallery-item" data-cat="bookmarks"><img src="assets/images/bookmarks-7.jpg" alt="Engraved wood bookmark" loading="lazy"><div class="cap"><span>Bookmarks</span><strong>Engraved Bookmark</strong></div></div>
+      <div class="gallery-item" data-cat="bookmarks"><img src="assets/images/bookmarks-10.jpg" alt="Custom wood bookmark" loading="lazy"><div class="cap"><span>Bookmarks</span><strong>Custom Bookmark</strong></div></div>
+      <div class="gallery-item" data-cat="bookmarks"><img src="assets/images/bookmarks-13.jpg" alt="Personalised bookmark" loading="lazy"><div class="cap"><span>Bookmarks</span><strong>Personalised Bookmark</strong></div></div>
+      <div class="gallery-item" data-cat="bookmarks"><img src="assets/images/bookmarks-18.jpg" alt="Wood bookmark detail" loading="lazy"><div class="cap"><span>Bookmarks</span><strong>Bookmark Detail</strong></div></div>
+      <div class="gallery-item" data-cat="bookmarks"><img src="assets/images/bookmarks-23.jpg" alt="Laser-cut bookmark" loading="lazy"><div class="cap"><span>Bookmarks</span><strong>Laser-Cut Bookmark</strong></div></div>
+
+      <!-- Ornaments -->
+      <div class="gallery-item" data-cat="ornaments"><img src="assets/images/ornaments-14.jpg" alt="Laser-cut holiday ornaments display" loading="lazy"><div class="cap"><span>Ornaments &amp; Décor</span><strong>Holiday Ornament Collection</strong></div></div>
+      <div class="gallery-item" data-cat="ornaments"><img src="assets/images/ornaments-4.jpg" alt="Wood ornament" loading="lazy"><div class="cap"><span>Ornaments &amp; Décor</span><strong>Wood Ornament</strong></div></div>
+      <div class="gallery-item" data-cat="ornaments"><img src="assets/images/ornaments-6.jpg" alt="Decorative laser-cut piece" loading="lazy"><div class="cap"><span>Ornaments &amp; Décor</span><strong>Decorative Piece</strong></div></div>
+      <div class="gallery-item" data-cat="ornaments"><img src="assets/images/ornaments-11.jpg" alt="Engraved ornament" loading="lazy"><div class="cap"><span>Ornaments &amp; Décor</span><strong>Engraved Ornament</strong></div></div>
+      <div class="gallery-item" data-cat="ornaments"><img src="assets/images/ornaments-17.jpg" alt="Wood décor piece" loading="lazy"><div class="cap"><span>Ornaments &amp; Décor</span><strong>Wood Décor</strong></div></div>
+      <div class="gallery-item" data-cat="ornaments"><img src="assets/images/ornaments-21.jpg" alt="Laser-cut keepsake" loading="lazy"><div class="cap"><span>Ornaments &amp; Décor</span><strong>Keepsake Piece</strong></div></div>
+      <div class="gallery-item" data-cat="ornaments"><img src="assets/images/ornaments-25.jpg" alt="Ornament detail" loading="lazy"><div class="cap"><span>Ornaments &amp; Décor</span><strong>Ornament Detail</strong></div></div>
+
+      <!-- Custom -->
+      <div class="gallery-item" data-cat="custom"><img src="assets/images/custom-5.jpg" alt="Bespoke laser-cut commission" loading="lazy"><div class="cap"><span>Custom &amp; Personalised</span><strong>Bespoke Commission</strong></div></div>
+      <div class="gallery-item" data-cat="custom"><img src="assets/images/custom-12.jpg" alt="Personalised laser piece" loading="lazy"><div class="cap"><span>Custom &amp; Personalised</span><strong>Personalised Piece</strong></div></div>
+      <div class="gallery-item" data-cat="custom"><img src="assets/images/custom-15.jpg" alt="Custom order detail" loading="lazy"><div class="cap"><span>Custom &amp; Personalised</span><strong>Custom Order</strong></div></div>
+      <div class="gallery-item" data-cat="custom"><img src="assets/images/custom-19.jpg" alt="Made-to-order piece" loading="lazy"><div class="cap"><span>Custom &amp; Personalised</span><strong>Made-to-Order</strong></div></div>
+      <div class="gallery-item" data-cat="custom"><img src="assets/images/custom-22.jpg" alt="Custom laser design" loading="lazy"><div class="cap"><span>Custom &amp; Personalised</span><strong>Custom Design</strong></div></div>
+      <div class="gallery-item" data-cat="custom"><img src="assets/images/custom-26.jpg" alt="Personalised gift piece" loading="lazy"><div class="cap"><span>Custom &amp; Personalised</span><strong>Personalised Gift</strong></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
+  <img src="" alt="" id="lightboxImg">
+</div>
+
+<!-- ============ CONTACT ============ -->
+<section class="contact" id="contact">
+  <div class="wrap contact-grid">
+    <div class="contact-info">
+      <p class="eyebrow">Get In Touch</p>
+      <h2 style="font-size:clamp(1.9rem,3.2vw,2.5rem); margin:16px 0 26px;">Let's make<br>something together.</h2>
+      <p style="color:rgba(24,16,13,0.68); max-width:44ch; margin-bottom:10px;">Have a design brief, a laser-cut idea, or a gift you can't find anywhere else? Send the details below or reach out directly.</p>
+
+      <div class="info-row">
+        <span class="ic">&#9993;</span>
+        <div>
+          <span class="label">Email</span>
+          <a href="mailto:glory.laser@yahoo.com">glory.laser@yahoo.com</a>
+        </div>
+      </div>
+      <div class="info-row">
+        <span class="ic">&#9742;</span>
+        <div>
+          <span class="label">Phone</span>
+          <a href="tel:+447405438650">07405 438650</a>
+        </div>
+      </div>
+      <div class="info-row">
+        <span class="ic">&#9998;</span>
+        <div>
+          <span class="label">Also Known As</span>
+          <span class="txt">Remon Hanna &middot; Remon Anwer</span>
+        </div>
+      </div>
+    </div>
+
+    <form class="contact-form" id="contactForm" action="https://formspree.io/f/https://formspree.io/f/xqerdlpb" method="POST">
+      <div class="form-two">
+        <div class="form-row">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-row">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <label for="service">What are you after?</label>
+        <select id="service" name="service">
+          <option>Graphic Design</option>
+          <option>Laser Cutting &amp; Engraving</option>
+          <option>Both / Not Sure Yet</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" required placeholder="Tell me a bit about what you'd like made..."></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary form-submit">Send Message</button>
+      <p class="form-note">Prefer email? Write directly to <a href="mailto:glory.laser@yahoo.com" style="color:var(--ember)">glory.laser@yahoo.com</a></p>
+      <p id="form-status"></p>
+    </form>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="footer-inner">
+      <a href="#top" class="brand">
+        <span class="brand-mark">R</span>
+        <span class="brand-text">
+          <strong>Remon Hanna</strong>
+          <span>Remon Anwer</span>
+        </span>
+      </a>
+      <ul class="footer-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="year"></span> Remon Hanna / Remon Anwer. All work shown is original.</span>
+      <span>Designed &amp; Engraved by Hand</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Mobile nav
+  const burger = document.getElementById('burgerBtn');
+  const navLinks = document.getElementById('navLinks');
+  burger.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('open');
+    burger.setAttribute('aria-expanded', isOpen);
+  });
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    burger.setAttribute('aria-expanded', 'false');
+  }));
+
+  // Portfolio filter
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const galleryItems = document.querySelectorAll('.gallery-item');
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.dataset.filter;
+      galleryItems.forEach(item => {
+        if (filter === 'all' || item.dataset.cat === filter) {
+          item.classList.remove('hide');
+        } else {
+          item.classList.add('hide');
+        }
+      });
+    });
+  });
+
+  // Lightbox
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  document.querySelectorAll('.gallery-item img').forEach(img => {
+    img.addEventListener('click', () => {
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt;
+      lightbox.classList.add('open');
+    });
+  });
+  document.getElementById('lightboxClose').addEventListener('click', () => lightbox.classList.remove('open'));
+  lightbox.addEventListener('click', (e) => { if (e.target === lightbox) lightbox.classList.remove('open'); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') lightbox.classList.remove('open'); });
+
+  // Contact form (Formspree AJAX submit)
+  const form = document.getElementById('contactForm');
+  const status = document.getElementById('form-status');
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const data = new FormData(form);
+    status.className = '';
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        status.textContent = "Thanks your message has been sent. I'll get back to you soon.";
+        status.className = 'show ok';
+        form.reset();
+      } else {
+        throw new Error('Form error');
+      }
+    } catch (err) {
+      status.textContent = "Something went wrong — please email glory.laser@yahoo.com directly.";
+      status.className = 'show err';
+    }
+  });
+
+  // Nav background on scroll
+  const nav = document.querySelector('.site-nav');
+  window.addEventListener('scroll', () => {
+    nav.style.boxShadow = window.scrollY > 40 ? '0 8px 24px -12px rgba(0,0,0,0.4)' : 'none';
+  });
+</script>
+
+</body>
+</html>
