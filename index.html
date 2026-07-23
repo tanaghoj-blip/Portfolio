@@ -4,13 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Remon Hanna | Graphic Design &amp; Laser Cutting Artisan</title>
-<meta name="description" content="Remon Hanna (Remon Anwer) - graphic designer and laser cutting &amp; engraving artisan with 20+ years of experience. Custom wood signs, bookmarks, ornaments and personalised gifts.">
+<meta name="description" content="Remon Hanna, also known as Remon Anwer, is a graphic designer and laser cutting and engraving artisan with over 20 years of experience. Custom wood signs, keychains, frames and personalised gifts.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Work+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Work+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Alex+Brush&display=swap" rel="stylesheet">
 
-<!-- Favicon: simple wood-tag mark -->
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%232a1810'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='30' fill='%23d9b98a' text-anchor='middle'%3ER%3C/text%3E%3C/svg%3E">
 
 <style>
@@ -24,13 +23,11 @@
     --ember:#c1662f;
     --ember-bright:#e08543;
     --sage:#7c8863;
-    --line:rgba(217,185,138,0.18);
     --shadow:0 20px 50px -20px rgba(0,0,0,0.5);
-    --radius:2px;
+    --font-signature:'Alex Brush', cursive;
   }
 
   *{box-sizing:border-box; margin:0; padding:0;}
-
   html{scroll-behavior:smooth;}
 
   @media (prefers-reduced-motion: reduce){
@@ -80,7 +77,18 @@
     padding:0 32px;
   }
 
-  /* ---------- laser line divider (signature element) ---------- */
+  /* fade in on scroll */
+  .reveal{
+    opacity:0;
+    transform:translateY(26px);
+    transition:opacity 0.8s ease, transform 0.8s ease;
+  }
+  .reveal.visible{
+    opacity:1;
+    transform:translateY(0);
+  }
+
+  /* laser line divider */
   .laser-divider{
     position:relative;
     height:34px;
@@ -100,14 +108,13 @@
     filter:drop-shadow(0 0 6px var(--ember-bright));
   }
 
-  /* ---------- NAV ---------- */
+  /* NAV */
   header.site-nav{
     position:fixed; top:0; left:0; right:0;
     z-index:100;
     background:rgba(36,22,16,0.92);
     backdrop-filter:blur(8px);
     border-bottom:1px solid rgba(217,185,138,0.14);
-    transition:background 0.3s ease;
   }
   .nav-inner{
     max-width:1180px;
@@ -136,16 +143,8 @@
     background:linear-gradient(160deg, rgba(217,185,138,0.08), transparent);
     flex-shrink:0;
   }
-  .brand-text{
-    display:flex;
-    flex-direction:column;
-    line-height:1.15;
-  }
-  .brand-text strong{
-    font-family:'Fraunces', serif;
-    font-size:1.05rem;
-    letter-spacing:0.01em;
-  }
+  .brand-text{display:flex; flex-direction:column; line-height:1.15;}
+  .brand-text strong{font-family:'Fraunces', serif; font-size:1.05rem; letter-spacing:0.01em;}
   .brand-text span{
     font-family:'IBM Plex Mono', monospace;
     font-size:0.62rem;
@@ -154,11 +153,7 @@
     color:var(--wood-oak);
   }
 
-  nav.nav-links{
-    display:flex;
-    gap:36px;
-    list-style:none;
-  }
+  nav.nav-links{display:flex; gap:36px; list-style:none;}
   nav.nav-links a{
     text-decoration:none;
     color:var(--wood-birch);
@@ -196,18 +191,10 @@
   }
   .nav-cta:hover{background:var(--ember-bright); color:#fff; transform:translateY(-1px);}
 
-  .burger{
-    display:none;
-    flex-direction:column;
-    gap:5px;
-    background:none;
-    border:none;
-    cursor:pointer;
-    padding:6px;
-  }
+  .burger{display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:6px;}
   .burger span{width:24px; height:2px; background:var(--wood-birch); display:block;}
 
-  /* ---------- HERO ---------- */
+  /* HERO */
   .hero{
     position:relative;
     min-height:100vh;
@@ -221,7 +208,6 @@
     padding:140px 0 90px;
   }
   .hero::before{
-    /* wood grain texture */
     content:"";
     position:absolute; inset:0;
     background-image:repeating-linear-gradient(178deg, rgba(217,185,138,0.025) 0px, rgba(217,185,138,0.025) 1px, transparent 2px, transparent 9px);
@@ -236,17 +222,22 @@
     align-items:center;
     width:100%;
   }
-  .hero-eyebrow{
-    color:var(--ember-bright);
+  .hero-eyebrow{color:var(--ember-bright);}
+  .hero-name{
+    font-family:var(--font-signature);
+    font-weight:400;
+    color:var(--wood-birch);
+    font-size:clamp(3.4rem, 8vw, 6.2rem);
+    line-height:1;
+    margin:16px 0 2px;
   }
-  .hero h1{
-    color:var(--paper-cream);
-    font-size:clamp(2.6rem, 5.4vw, 4.4rem);
-    margin:22px 0 8px;
-  }
-  .hero h1 em{
+  .hero-tagline{
+    font-family:'Fraunces', serif;
     font-style:italic;
-    color:var(--ember-bright);
+    font-weight:500;
+    color:var(--paper-cream);
+    font-size:clamp(1.2rem, 2.4vw, 1.6rem);
+    margin-bottom:10px;
   }
   .hero .alt-name{
     font-family:'IBM Plex Mono', monospace;
@@ -261,12 +252,7 @@
     max-width:46ch;
     margin-bottom:34px;
   }
-  .hero-ctas{
-    display:flex;
-    gap:16px;
-    flex-wrap:wrap;
-    margin-bottom:48px;
-  }
+  .hero-ctas{display:flex; gap:16px; flex-wrap:wrap; margin-bottom:48px;}
   .btn{
     font-family:'IBM Plex Mono', monospace;
     font-size:0.78rem;
@@ -280,28 +266,14 @@
     gap:10px;
     transition:transform 0.2s ease, background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
   }
-  .btn-primary{
-    background:var(--ember);
-    color:#fff9f2;
-  }
+  .btn-primary{background:var(--ember); color:#fff9f2;}
   .btn-primary:hover{background:var(--ember-bright); transform:translateY(-2px);}
-  .btn-ghost{
-    border:1px solid rgba(217,185,138,0.4);
-    color:var(--wood-birch);
-  }
+  .btn-ghost{border:1px solid rgba(217,185,138,0.4); color:var(--wood-birch);}
   .btn-ghost:hover{border-color:var(--wood-birch); background:rgba(217,185,138,0.06); transform:translateY(-2px);}
 
-  .hero-stats{
-    display:flex;
-    gap:40px;
-  }
+  .hero-stats{display:flex; gap:40px;}
   .hero-stats div{border-left:1px solid rgba(217,185,138,0.25); padding-left:16px;}
-  .hero-stats strong{
-    font-family:'Fraunces', serif;
-    font-size:1.9rem;
-    color:var(--wood-birch);
-    display:block;
-  }
+  .hero-stats strong{font-family:'Fraunces', serif; font-size:1.9rem; color:var(--wood-birch); display:block;}
   .hero-stats span{
     font-family:'IBM Plex Mono', monospace;
     font-size:0.68rem;
@@ -310,10 +282,7 @@
     color:var(--wood-oak);
   }
 
-  .hero-visual{
-    position:relative;
-    aspect-ratio:4/5;
-  }
+  .hero-visual{position:relative; aspect-ratio:4/5;}
   .hero-visual .frame{
     position:absolute;
     border-radius:3px;
@@ -350,18 +319,10 @@
   .section-head h2{font-size:clamp(2rem, 3.6vw, 2.9rem); margin-top:16px;}
   .section-head p{margin-top:18px; color:rgba(24,16,13,0.68); font-size:1.05rem;}
 
-  /* ---------- ABOUT ---------- */
+  /* ABOUT */
   .about{background:var(--paper-cream); position:relative;}
-  .about-grid{
-    display:grid;
-    grid-template-columns:0.85fr 1.15fr;
-    gap:70px;
-    align-items:start;
-  }
-  .about-portrait{
-    position:sticky;
-    top:110px;
-  }
+  .about-grid{display:grid; grid-template-columns:0.85fr 1.15fr; gap:70px; align-items:start;}
+  .about-portrait{position:sticky; top:110px;}
   .about-portrait .tag{
     background:var(--wood-espresso);
     color:var(--wood-birch);
@@ -382,32 +343,14 @@
     line-height:1.45;
   }
 
-  .timeline{
-    margin-top:44px;
-    border-top:1px solid rgba(24,16,13,0.14);
-  }
-  .timeline-row{
-    display:grid;
-    grid-template-columns:110px 1fr;
-    gap:24px;
-    padding:20px 0;
-    border-bottom:1px solid rgba(24,16,13,0.1);
-  }
-  .timeline-row .yr{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:0.8rem;
-    color:var(--ember);
-    letter-spacing:0.04em;
-  }
+  .timeline{margin-top:44px; border-top:1px solid rgba(24,16,13,0.14);}
+  .timeline-row{display:grid; grid-template-columns:110px 1fr; gap:24px; padding:20px 0; border-bottom:1px solid rgba(24,16,13,0.1);}
+  .timeline-row .yr{font-family:'IBM Plex Mono', monospace; font-size:0.8rem; color:var(--ember); letter-spacing:0.04em;}
   .timeline-row h4{font-size:1.05rem; margin-bottom:4px;}
   .timeline-row p{color:rgba(24,16,13,0.65); font-size:0.95rem;}
 
-  /* ---------- SERVICES ---------- */
-  .services{
-    background:var(--wood-espresso);
-    color:var(--paper-cream);
-    position:relative;
-  }
+  /* SERVICES */
+  .services{background:var(--wood-espresso); color:var(--paper-cream); position:relative;}
   .services .section-head p{color:rgba(244,236,216,0.68);}
   .services .eyebrow{color:var(--ember-bright);}
   .service-grid{
@@ -418,11 +361,7 @@
     border-radius:4px;
     overflow:hidden;
   }
-  .service-card{
-    background:var(--wood-espresso);
-    padding:48px 42px;
-    position:relative;
-  }
+  .service-card{background:var(--wood-espresso); padding:48px 42px; position:relative;}
   .service-card .num{
     font-family:'IBM Plex Mono', monospace;
     font-size:0.72rem;
@@ -452,39 +391,9 @@
     box-shadow:0 0 8px var(--ember-bright);
   }
 
-  /* ---------- PORTFOLIO ---------- */
+  /* PORTFOLIO */
   .portfolio{background:var(--paper-cream);}
-  .filter-bar{
-    display:flex;
-    gap:10px;
-    flex-wrap:wrap;
-    margin-bottom:44px;
-  }
-  .filter-btn{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:0.74rem;
-    letter-spacing:0.05em;
-    text-transform:uppercase;
-    background:transparent;
-    border:1px solid rgba(24,16,13,0.2);
-    color:var(--char);
-    padding:10px 18px;
-    border-radius:20px;
-    cursor:pointer;
-    transition:all 0.2s ease;
-  }
-  .filter-btn:hover{border-color:var(--ember);}
-  .filter-btn.active{
-    background:var(--wood-espresso);
-    border-color:var(--wood-espresso);
-    color:var(--wood-birch);
-  }
-
-  .gallery{
-    display:grid;
-    grid-template-columns:repeat(3, 1fr);
-    gap:24px;
-  }
+  .gallery{display:grid; grid-template-columns:repeat(3, 1fr); gap:24px;}
   .gallery-item{
     position:relative;
     border-radius:3px;
@@ -494,11 +403,7 @@
     cursor:pointer;
     box-shadow:0 10px 30px -14px rgba(0,0,0,0.3);
   }
-  .gallery-item img{
-    width:100%; height:100%;
-    object-fit:cover;
-    transition:transform 0.5s ease;
-  }
+  .gallery-item img{width:100%; height:100%; object-fit:cover; transition:transform 0.5s ease;}
   .gallery-item:hover img{transform:scale(1.06);}
   .gallery-item .cap{
     position:absolute; left:0; right:0; bottom:0;
@@ -510,17 +415,7 @@
     transition:all 0.3s ease;
   }
   .gallery-item:hover .cap{opacity:1; transform:translateY(0);}
-  .gallery-item .cap span{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:0.62rem;
-    letter-spacing:0.1em;
-    text-transform:uppercase;
-    color:var(--ember-bright);
-    display:block;
-    margin-bottom:3px;
-  }
   .gallery-item .cap strong{font-family:'Fraunces', serif; font-weight:500; font-size:1rem;}
-  .gallery-item.hide{display:none;}
 
   /* lightbox */
   .lightbox{
@@ -543,15 +438,9 @@
     font-size:1.1rem;
   }
 
-  /* ---------- CONTACT ---------- */
-  .contact{
-    background:linear-gradient(180deg, var(--paper-cream), #ece0c6);
-  }
-  .contact-grid{
-    display:grid;
-    grid-template-columns:0.9fr 1.1fr;
-    gap:60px;
-  }
+  /* CONTACT */
+  .contact{background:linear-gradient(180deg, var(--paper-cream), #ece0c6);}
+  .contact-grid{display:grid; grid-template-columns:0.9fr 1.1fr; gap:60px;}
   .contact-info .info-row{
     display:flex;
     align-items:flex-start;
@@ -616,34 +505,36 @@
   .form-row input:focus, .form-row textarea:focus, .form-row select:focus{border-color:var(--ember);}
   .form-row textarea{resize:vertical; min-height:110px;}
   .form-two{display:grid; grid-template-columns:1fr 1fr; gap:20px;}
-  .form-submit{
-    border:none;
-    cursor:pointer;
-    width:100%;
-    justify-content:center;
-    margin-top:6px;
-  }
-  .form-note{
-    font-size:0.82rem;
-    color:rgba(24,16,13,0.55);
-    margin-top:14px;
-  }
-  #form-status{
-    margin-top:16px;
-    font-size:0.9rem;
-    font-family:'IBM Plex Mono', monospace;
-    display:none;
-  }
+  .form-submit{border:none; cursor:pointer; width:100%; justify-content:center; margin-top:6px;}
+  .form-note{font-size:0.82rem; color:rgba(24,16,13,0.55); margin-top:14px;}
+  #form-status{margin-top:16px; font-size:0.9rem; font-family:'IBM Plex Mono', monospace; display:none;}
   #form-status.show{display:block;}
   #form-status.ok{color:var(--sage);}
   #form-status.err{color:#b3492f;}
 
-  /* ---------- FOOTER ---------- */
-  footer{
-    background:var(--wood-espresso);
-    color:rgba(244,236,216,0.6);
-    padding:50px 0 30px;
+  /* SIGNATURE CLOSE */
+  .signature-close{
+    text-align:center;
+    padding:70px 0 10px;
   }
+  .signature-close .sig-name{
+    font-family:var(--font-signature);
+    font-weight:400;
+    font-size:clamp(2.6rem, 6vw, 4.4rem);
+    color:var(--ember-bright);
+    line-height:1;
+  }
+  .signature-close .sig-caption{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.7rem;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+    color:var(--wood-oak);
+    margin-top:10px;
+  }
+
+  /* FOOTER */
+  footer{background:var(--wood-espresso); color:rgba(244,236,216,0.6); padding:10px 0 30px;}
   .footer-inner{
     display:flex;
     justify-content:space-between;
@@ -654,7 +545,6 @@
     border-bottom:1px solid rgba(217,185,138,0.12);
     margin-bottom:24px;
   }
-  footer .brand-text strong{color:var(--wood-birch);}
   .footer-links{display:flex; gap:26px; list-style:none;}
   .footer-links a{text-decoration:none; font-size:0.88rem; color:rgba(244,236,216,0.65);}
   .footer-links a:hover{color:var(--ember-bright);}
@@ -665,12 +555,9 @@
     color:rgba(244,236,216,0.35);
   }
 
-  a:focus-visible, button:focus-visible, .filter-btn:focus-visible{
-    outline:2px solid var(--ember-bright);
-    outline-offset:3px;
-  }
+  a:focus-visible, button:focus-visible{outline:2px solid var(--ember-bright); outline-offset:3px;}
 
-  /* ---------- RESPONSIVE ---------- */
+  /* RESPONSIVE */
   @media (max-width: 900px){
     nav.nav-links{
       position:fixed; top:70px; left:0; right:0;
@@ -716,7 +603,6 @@
 </head>
 <body>
 
-<!-- ============ NAV ============ -->
 <header class="site-nav">
   <div class="nav-inner">
     <a href="#top" class="brand">
@@ -739,31 +625,23 @@
   </div>
 </header>
 
-<!-- ============ HERO ============ -->
+<!-- HERO -->
 <section class="hero" id="top">
   <div class="wrap hero-inner">
     <div class="hero-text">
-      <p class="eyebrow hero-eyebrow">Graphic Design &amp; Laser Craft</p>
-      <h1>Ideas, <em>burned</em><br>into wood.</h1>
-      <p class="alt-name">Remon Hanna &nbsp;/&nbsp; professionally known as Remon Anwer</p>
-      <p class="lede">Twenty plus years turning concepts into keepsakes &mdash; from brand design on screen to precision laser‑cut and engraved wood in hand. Every piece designed, tested and finished personally.</p>
+      <p class="eyebrow hero-eyebrow">Graphic Design and Laser Craft</p>
+      <h1 class="hero-name">Remon Hanna</h1>
+      <p class="hero-tagline">Ideas, burned into wood.</p>
+      <p class="alt-name">Professionally known as Remon Anwer</p>
+      <p class="lede">Twenty plus years turning concepts into keepsakes, from brand design on screen to precision laser cut and engraved wood in hand. Every piece designed, tested and finished personally.</p>
       <div class="hero-ctas">
         <a href="#portfolio" class="btn btn-primary">View the Work</a>
         <a href="#contact" class="btn btn-ghost">Start a Project</a>
       </div>
       <div class="hero-stats">
-        <div>
-          <strong>20+</strong>
-          <span>Years Experience</span>
-        </div>
-        <div>
-          <strong>2</strong>
-          <span>Crafts, One Vision</span>
-        </div>
-        <div>
-          <strong>1000s</strong>
-          <span>Pieces Cut &amp; Engraved</span>
-        </div>
+        <div><strong>20+</strong><span>Years Experience</span></div>
+        <div><strong>2</strong><span>Crafts, One Vision</span></div>
+        <div><strong>1000s</strong><span>Pieces Cut &amp; Engraved</span></div>
       </div>
     </div>
     <div class="hero-visual" aria-hidden="true">
@@ -784,41 +662,41 @@
   </svg>
 </div>
 
-<!-- ============ ABOUT ============ -->
+<!-- ABOUT -->
 <section class="about" id="about">
   <div class="wrap about-grid">
-    <div class="about-portrait">
+    <div class="about-portrait reveal">
       <div class="tag">
         <b>Remon Hanna</b>
         Graphic Designer<br>
         Laser Cutting &amp; Engraving Artisan<br>
         <span style="color:var(--wood-oak)">Working professionally as</span> Remon Anwer<br><br>
-        <span style="color:var(--wood-oak)">Est. experience —</span> 20+ years
+        <span style="color:var(--wood-oak)">Est. experience:</span> 20+ years
       </div>
     </div>
     <div class="about-copy">
-      <p class="eyebrow">About</p>
-      <p>Where graphic design meets laser precision.</p>
-      <p>For over two decades, Remon has worked across graphic design and the craft of laser cutting and engraving, building a practice where a concept doesn't stop at the screen. It gets tested in wood, refined under the laser head, and finished by hand until the grain, the light and the message all sit right together.</p>
-      <p>That range is what shapes the work - a trained eye for layout, type and composition, paired with real technical command of laser settings, materials and finishing. The result is pieces that read as considered design objects, not just cut-outs: personalised signs, keepsakes, bookmarks and décor made to be kept, not just looked at.</p>
-      <p>Every commission, big or small, gets the same attention - from the first sketch to the final polish.</p>
+      <p class="eyebrow reveal">About</p>
+      <p class="reveal">Where graphic design meets laser precision. A designer first, and a maker by hand second, or maybe it is the other way round.</p>
+      <p class="reveal">For over two decades, Remon has worked across graphic design and the craft of laser cutting and engraving, building a practice where a concept does not stop at the screen. It gets tested in wood, refined under the laser head, and finished by hand until the grain, the light and the message all sit right together.</p>
+      <p class="reveal">That range is what shapes the work. A trained eye for layout, type and composition, paired with real technical command of laser settings, materials and finishing. The result is pieces that read as considered design objects, not just cutouts: personalised signs, keepsakes, keychains and décor made to be kept, not just looked at.</p>
+      <p class="reveal">Every commission, big or small, gets the same attention from the first sketch to the final polish.</p>
 
       <div class="timeline">
-        <div class="timeline-row">
+        <div class="timeline-row reveal">
           <span class="yr">Design</span>
           <div>
             <h4>Graphic Design</h4>
-            <p>Brand marks, layout and custom artwork - designed to translate cleanly from screen to material.</p>
+            <p>Brand marks, layout and custom artwork designed to translate cleanly from screen to material.</p>
           </div>
         </div>
-        <div class="timeline-row">
+        <div class="timeline-row reveal">
           <span class="yr">Craft</span>
           <div>
             <h4>Laser Cutting &amp; Engraving</h4>
-            <p>Precision work on wood, acrylic, leather and other materials - signs, ornaments, bookmarks and fully bespoke pieces.</p>
+            <p>Precision work on wood, acrylic, leather and other materials, including signs, keychains, bookmarks and fully bespoke pieces.</p>
           </div>
         </div>
-        <div class="timeline-row">
+        <div class="timeline-row reveal">
           <span class="yr">Finish</span>
           <div>
             <h4>Hand-Finished</h4>
@@ -830,134 +708,145 @@
   </div>
 </section>
 
-<!-- ============ SERVICES ============ -->
+<!-- SERVICES -->
 <section class="services" id="services">
   <div class="wrap">
-    <div class="section-head">
+    <div class="section-head reveal">
       <p class="eyebrow">What Remon Does</p>
       <h2>Two crafts. One standard.</h2>
-      <p>Design and fabrication under one roof - hire either service on its own, or bring a project that needs both from concept to finished piece.</p>
+      <p>Design and fabrication under one roof. Hire either service on its own, or bring a project that needs both from concept to finished piece.</p>
     </div>
     <div class="service-grid">
-      <div class="service-card">
+      <div class="service-card reveal">
         <span class="num">01 / Design</span>
         <h3>Graphic Design</h3>
-        <p>Clean, considered design work - built to look as good in print and on wood as it does on screen.</p>
+        <p>Clean, considered design work built to look as good in print and on wood as it does on screen.</p>
         <ul>
           <li>Logo &amp; brand mark design</li>
           <li>Custom illustration &amp; layout artwork</li>
-          <li>Print-ready &amp; laser-ready file prep</li>
+          <li>Print ready &amp; laser ready file prep</li>
           <li>Packaging &amp; product artwork</li>
         </ul>
       </div>
-      <div class="service-card">
+      <div class="service-card reveal">
         <span class="num">02 / Craft</span>
         <h3>Laser Cutting &amp; Engraving</h3>
-        <p>Precision laser work on wood, acrylic, leather and beyond - from a single custom keepsake to small production runs.</p>
+        <p>Precision laser work on wood, acrylic, leather and beyond, from a single custom keepsake to small production runs.</p>
         <ul>
           <li>Custom signs &amp; wall plaques</li>
-          <li>Personalised bookmarks &amp; keepsakes</li>
-          <li>Ornaments, tags &amp; gift pieces</li>
-          <li>Bespoke &amp; made-to-order commissions</li>
+          <li>Personalised keychains &amp; bookmarks</li>
+          <li>Frames, gifts &amp; keepsakes</li>
+          <li>Bespoke &amp; made to order commissions</li>
         </ul>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ PORTFOLIO ============ -->
+<!-- PORTFOLIO -->
 <section class="portfolio" id="portfolio">
   <div class="wrap">
-    <div class="section-head">
+    <div class="section-head reveal">
       <p class="eyebrow">Selected Work</p>
       <h2>From the workshop.</h2>
-      <p>A look at recent pieces - filter by type, or browse the full collection.</p>
-    </div>
-
-    <div class="filter-bar" role="tablist" aria-label="Filter portfolio by category">
-      <button class="filter-btn active" data-filter="all">All Work</button>
-      <button class="filter-btn" data-filter="signs">Signs &amp; Plaques</button>
-      <button class="filter-btn" data-filter="bookmarks">Bookmarks</button>
-      <button class="filter-btn" data-filter="ornaments">Ornaments &amp; Décor</button>
-      <button class="filter-btn" data-filter="custom">Custom &amp; Personalised</button>
+      <p>A look at recent pieces, each one made by hand from start to finish.</p>
     </div>
 
     <div class="gallery" id="gallery">
-      <!-- Signs -->
-      <div class="gallery-item" data-cat="signs"><img src="assets/images/signs-9.jpg" alt="Laser-engraved wood plaque" loading="lazy"><div class="cap"><span>Signs &amp; Plaques</span><strong>Engraved Wood Plaque</strong></div></div>
-      <div class="gallery-item" data-cat="signs"><img src="assets/images/signs-3.jpg" alt="Custom laser-cut wood sign" loading="lazy"><div class="cap"><span>Signs &amp; Plaques</span><strong>Custom Wood Sign</strong></div></div>
-      <div class="gallery-item" data-cat="signs"><img src="assets/images/signs-8.jpg" alt="Engraved wall sign" loading="lazy"><div class="cap"><span>Signs &amp; Plaques</span><strong>Wall Sign</strong></div></div>
-      <div class="gallery-item" data-cat="signs"><img src="assets/images/signs-16.jpg" alt="Personalised wood plaque" loading="lazy"><div class="cap"><span>Signs &amp; Plaques</span><strong>Personalised Plaque</strong></div></div>
-      <div class="gallery-item" data-cat="signs"><img src="assets/images/signs-20.jpg" alt="Laser-cut sign detail" loading="lazy"><div class="cap"><span>Signs &amp; Plaques</span><strong>Wood Sign Detail</strong></div></div>
-      <div class="gallery-item" data-cat="signs"><img src="assets/images/signs-24.jpg" alt="Engraved sign" loading="lazy"><div class="cap"><span>Signs &amp; Plaques</span><strong>Engraved Sign</strong></div></div>
-      <div class="gallery-item" data-cat="signs"><img src="assets/images/signs-27.jpg" alt="Custom sign piece" loading="lazy"><div class="cap"><span>Signs &amp; Plaques</span><strong>Custom Sign</strong></div></div>
+      <div class="gallery-item reveal"><img src="assets/images/Modern sign (1).png" alt="Modern Sign"><div class="cap"><strong>Modern Sign</strong></div></div>
+      <div class="gallery-item reveal"><img src="assets/images/Modern sign (2).png" alt="Modern Sign"><div class="cap"><strong>Modern Sign</strong></div></div>
+      <div class="gallery-item reveal"><img src="assets/images/Modern sign (3).png" alt="Modern Sign"><div class="cap"><strong>Modern Sign</strong></div></div>
+      <div class="gallery-item reveal"><img src="assets/images/Modern sign (4).png" alt="Modern Sign"><div class="cap"><strong>Modern Sign</strong></div></div>
+      <div class="gallery-item reveal"><img src="assets/images/Modern sign (5).png" alt="Modern Sign"><div class="cap"><strong>Modern Sign</strong></div></div>
+      <div class="gallery-item reveal"><img src="assets/images/Modern sign (6).png" alt="Modern Sign"><div class="cap"><strong>Modern Sign</strong></div></div>
+      <div class="gallery-item reveal"><img src="assets/images/Modern sign (7).png" alt="Modern Sign"><div class="cap"><strong>Modern Sign</strong></div></div>
+      <div class="gallery-item reveal"><img src="assets/images/Modern sign (8).png" alt="Modern Sign"><div class="cap"><strong>Modern Sign</strong></div></div>
+      <div class="gallery-item reveal"><img src="assets/images/Modern sign (9).png" alt="Modern Sign"><div class="cap"><strong>Modern Sign</strong></div></div>
+      <div class="gallery-item reveal"><img src="assets/images/Modern sign (10).png" alt="Modern Sign"><div class="cap"><strong>Modern Sign</strong></div></div>
+      <div class="gallery-item reveal"><img src="assets/images/Modern sign (11).png" alt="Modern Sign"><div class="cap"><strong>Modern Sign</strong></div></div>
+      <div class="gallery-item reveal"><img src="assets/images/Modern sign..png" alt="Modern Sign"><div class="cap"><strong>Modern Sign</strong></div></div>
+      <div class="gallery-item reveal"><img src="assets/images/Wooden laser engraved plaque.png" alt="Wooden Laser Engraved Plaque"><div class="cap"><strong>Wooden Laser Engraved Plaque</strong></div></div>
+      <div class="gallery-item reveal"><img src="assets/images/Decorative Clock.png" alt="Decorative Clock"><div class="cap"><strong>Decorative Clock</strong></div></div>
+      <div class="gallery-item reveal"><img src="assets/images/Desk calendar clock.png" alt="Desk Calendar Clock"><div class="cap"><strong>Desk Calendar Clock</strong></div></div>
+      <div class="gallery-item reveal"><img src="assets/images/Acrylic plaque (1).png" alt="Acrylic Plaque"><div class="cap"><strong>Acrylic Plaque</strong></div></div>
+      <div class="gallery-item reveal"><img src="assets/images/Acrylic plaque (2).png" alt="Acrylic Plaque"><div class="cap"><strong>Acrylic Plaque</strong></div></div>
 
-      <!-- Bookmarks -->
-      <div class="gallery-item" data-cat="bookmarks"><img src="assets/images/bookmarks-2.jpg" alt="Laser-cut wood bookmarks with tassels" loading="lazy"><div class="cap"><span>Bookmarks</span><strong>Tasselled Bookmark Set</strong></div></div>
-      <div class="gallery-item" data-cat="bookmarks"><img src="assets/images/bookmarks-7.jpg" alt="Engraved wood bookmark" loading="lazy"><div class="cap"><span>Bookmarks</span><strong>Engraved Bookmark</strong></div></div>
-      <div class="gallery-item" data-cat="bookmarks"><img src="assets/images/bookmarks-10.jpg" alt="Custom wood bookmark" loading="lazy"><div class="cap"><span>Bookmarks</span><strong>Custom Bookmark</strong></div></div>
-      <div class="gallery-item" data-cat="bookmarks"><img src="assets/images/bookmarks-13.jpg" alt="Personalised bookmark" loading="lazy"><div class="cap"><span>Bookmarks</span><strong>Personalised Bookmark</strong></div></div>
-      <div class="gallery-item" data-cat="bookmarks"><img src="assets/images/bookmarks-18.jpg" alt="Wood bookmark detail" loading="lazy"><div class="cap"><span>Bookmarks</span><strong>Bookmark Detail</strong></div></div>
-      <div class="gallery-item" data-cat="bookmarks"><img src="assets/images/bookmarks-23.jpg" alt="Laser-cut bookmark" loading="lazy"><div class="cap"><span>Bookmarks</span><strong>Laser-Cut Bookmark</strong></div></div>
+      <div class="gallery-item reveal"><img src="assets/images/Jesus Frame.png" alt="Jesus Frame"><div class="cap"><strong>Jesus Frame</strong></div></div>
+      <div class="gallery-item reveal"><img src="assets/images/Jesus frame..png" alt="Jesus Frame"><div class="cap"><strong>Jesus Frame</strong></div></div>
+      <div class="gallery-item reveal"><img src="assets/images/Jesus is my savior Frame.png" alt="Jesus Is My Savior Frame"><div class="cap"><strong>Jesus Is My Savior Frame</strong></div></div>
+      <div class="gallery-item reveal"><img src="assets/images/Jesus portrait plaque.png" alt="Jesus Portrait Plaque"><div class="cap"><strong>Jesus Portrait Plaque</strong></div></div>
+      <div class="gallery-item reveal"><img src="assets/images/sant Mary Frame.png" alt="Saint Mary Frame"><div class="cap"><strong>Saint Mary Frame</strong></div></div>
+      <div class="gallery-item reveal"><img src="assets/images/Cross.png" alt="Cross"><div class="cap"><strong>Cross</strong></div></div>
+      <div class="gallery-item reveal"><img src="assets/images/Hand Cross.png" alt="Hand Cross"><div class="cap"><strong>Hand Cross</strong></div></div>
+      <div class="gallery-item reveal"><img src="assets/images/Memorial Frame.png" alt="Memorial Frame"><div class="cap"><strong>Memorial Frame</strong></div></div>
+      <div class="gallery-item reveal"><img src="assets/images/The last Supper.png" alt="The Last Supper"><div class="cap"><strong>The Last Supper</strong></div></div>
 
-      <!-- Ornaments -->
-      <div class="gallery-item" data-cat="ornaments"><img src="assets/images/ornaments-14.jpg" alt="Laser-cut holiday ornaments display" loading="lazy"><div class="cap"><span>Ornaments &amp; Décor</span><strong>Holiday Ornament Collection</strong></div></div>
-      <div class="gallery-item" data-cat="ornaments"><img src="assets/images/ornaments-4.jpg" alt="Wood ornament" loading="lazy"><div class="cap"><span>Ornaments &amp; Décor</span><strong>Wood Ornament</strong></div></div>
-      <div class="gallery-item" data-cat="ornaments"><img src="assets/images/ornaments-6.jpg" alt="Decorative laser-cut piece" loading="lazy"><div class="cap"><span>Ornaments &amp; Décor</span><strong>Decorative Piece</strong></div></div>
-      <div class="gallery-item" data-cat="ornaments"><img src="assets/images/ornaments-11.jpg" alt="Engraved ornament" loading="lazy"><div class="cap"><span>Ornaments &amp; Décor</span><strong>Engraved Ornament</strong></div></div>
-      <div class="gallery-item" data-cat="ornaments"><img src="assets/images/ornaments-17.jpg" alt="Wood décor piece" loading="lazy"><div class="cap"><span>Ornaments &amp; Décor</span><strong>Wood Décor</strong></div></div>
-      <div class="gallery-item" data-cat="ornaments"><img src="assets/images/ornaments-21.jpg" alt="Laser-cut keepsake" loading="lazy"><div class="cap"><span>Ornaments &amp; Décor</span><strong>Keepsake Piece</strong></div></div>
-      <div class="gallery-item" data-cat="ornaments"><img src="assets/images/ornaments-25.jpg" alt="Ornament detail" loading="lazy"><div class="cap"><span>Ornaments &amp; Décor</span><strong>Ornament Detail</strong></div></div>
+      <div class="gallery-item reveal"><img src="assets/images/Keychains.png" alt="Keychains"><div class="cap"><strong>Keychains</strong></div></div>
+      <div class="gallery-item reveal"><img src="assets/images/Keychains..png" alt="Keychains"><div class="cap"><strong>Keychains</strong></div></div>
+      <div class="gallery-item reveal"><img src="assets/images/Keychains...png" alt="Keychains"><div class="cap"><strong>Keychains</strong></div></div>
+      <div class="gallery-item reveal"><img src="assets/images/Keychains....png" alt="Keychains"><div class="cap"><strong>Keychains</strong></div></div>
+      <div class="gallery-item reveal"><img src="assets/images/Christmas keychains.png" alt="Christmas Keychains"><div class="cap"><strong>Christmas Keychains</strong></div></div>
+      <div class="gallery-item reveal"><img src="assets/images/Christmas keychains..png" alt="Christmas Keychains"><div class="cap"><strong>Christmas Keychains</strong></div></div>
+      <div class="gallery-item reveal"><img src="assets/images/Wooden keychain gift.png" alt="Wooden Keychain Gift"><div class="cap"><strong>Wooden Keychain Gift</strong></div></div>
+      <div class="gallery-item reveal"><img src="assets/images/bookmark.png" alt="Bookmark"><div class="cap"><strong>Bookmark</strong></div></div>
+      <div class="gallery-item reveal"><img src="assets/images/bookmark..png" alt="Bookmark"><div class="cap"><strong>Bookmark</strong></div></div>
 
-      <!-- Custom -->
-      <div class="gallery-item" data-cat="custom"><img src="assets/images/custom-5.jpg" alt="Bespoke laser-cut commission" loading="lazy"><div class="cap"><span>Custom &amp; Personalised</span><strong>Bespoke Commission</strong></div></div>
-      <div class="gallery-item" data-cat="custom"><img src="assets/images/custom-12.jpg" alt="Personalised laser piece" loading="lazy"><div class="cap"><span>Custom &amp; Personalised</span><strong>Personalised Piece</strong></div></div>
-      <div class="gallery-item" data-cat="custom"><img src="assets/images/custom-15.jpg" alt="Custom order detail" loading="lazy"><div class="cap"><span>Custom &amp; Personalised</span><strong>Custom Order</strong></div></div>
-      <div class="gallery-item" data-cat="custom"><img src="assets/images/custom-19.jpg" alt="Made-to-order piece" loading="lazy"><div class="cap"><span>Custom &amp; Personalised</span><strong>Made-to-Order</strong></div></div>
-      <div class="gallery-item" data-cat="custom"><img src="assets/images/custom-22.jpg" alt="Custom laser design" loading="lazy"><div class="cap"><span>Custom &amp; Personalised</span><strong>Custom Design</strong></div></div>
-      <div class="gallery-item" data-cat="custom"><img src="assets/images/custom-26.jpg" alt="Personalised gift piece" loading="lazy"><div class="cap"><span>Custom &amp; Personalised</span><strong>Personalised Gift</strong></div></div>
+      <div class="gallery-item reveal"><img src="assets/images/Wedding Invitation.png" alt="Wedding Invitation"><div class="cap"><strong>Wedding Invitation</strong></div></div>
+      <div class="gallery-item reveal"><img src="assets/images/Wedding invitation...png" alt="Wedding Invitation"><div class="cap"><strong>Wedding Invitation</strong></div></div>
+      <div class="gallery-item reveal"><img src="assets/images/Cover invtation.png" alt="Cover Invitation"><div class="cap"><strong>Cover Invitation</strong></div></div>
+      <div class="gallery-item reveal"><img src="assets/images/Save the date.png" alt="Save The Date"><div class="cap"><strong>Save The Date</strong></div></div>
+
+      <div class="gallery-item reveal"><img src="assets/images/Baby newborn keepsake chair.png" alt="Baby Newborn Keepsake Chair"><div class="cap"><strong>Baby Newborn Keepsake Chair</strong></div></div>
+      <div class="gallery-item reveal"><img src="assets/images/Christmas gifts.png" alt="Christmas Gifts"><div class="cap"><strong>Christmas Gifts</strong></div></div>
+      <div class="gallery-item reveal"><img src="assets/images/Wooden Christmas bag.png" alt="Wooden Christmas Bag"><div class="cap"><strong>Wooden Christmas Bag</strong></div></div>
+      <div class="gallery-item reveal"><img src="assets/images/Wooden box.png" alt="Wooden Box"><div class="cap"><strong>Wooden Box</strong></div></div>
+      <div class="gallery-item reveal"><img src="assets/images/Wooden calender.png" alt="Wooden Calendar"><div class="cap"><strong>Wooden Calendar</strong></div></div>
+      <div class="gallery-item reveal"><img src="assets/images/Wooden desk organizer set.png" alt="Wooden Desk Organizer Set"><div class="cap"><strong>Wooden Desk Organizer Set</strong></div></div>
+      <div class="gallery-item reveal"><img src="assets/images/Wooden floor lamp.png" alt="Wooden Floor Lamp"><div class="cap"><strong>Wooden Floor Lamp</strong></div></div>
+      <div class="gallery-item reveal"><img src="assets/images/Wooden folder.png" alt="Wooden Folder"><div class="cap"><strong>Wooden Folder</strong></div></div>
+      <div class="gallery-item reveal"><img src="assets/images/Wooden gnomes family decor.png" alt="Wooden Gnomes Family Decor"><div class="cap"><strong>Wooden Gnomes Family Decor</strong></div></div>
+      <div class="gallery-item reveal"><img src="assets/images/Wooden table lamp.png" alt="Wooden Table Lamp"><div class="cap"><strong>Wooden Table Lamp</strong></div></div>
+      <div class="gallery-item reveal"><img src="assets/images/Wooden tissue box.png" alt="Wooden Tissue Box"><div class="cap"><strong>Wooden Tissue Box</strong></div></div>
+      <div class="gallery-item reveal"><img src="assets/images/Tea &amp; Coffe organizer (1).png" alt="Tea and Coffee Organizer"><div class="cap"><strong>Tea and Coffee Organizer</strong></div></div>
+      <div class="gallery-item reveal"><img src="assets/images/Tea &amp; Coffe organizer (2).png" alt="Tea and Coffee Organizer"><div class="cap"><strong>Tea and Coffee Organizer</strong></div></div>
+      <div class="gallery-item reveal"><img src="assets/images/Phone stant.png" alt="Phone Stand"><div class="cap"><strong>Phone Stand</strong></div></div>
+      <div class="gallery-item reveal"><img src="assets/images/Phone stant...png" alt="Phone Stand"><div class="cap"><strong>Phone Stand</strong></div></div>
+      <div class="gallery-item reveal"><img src="assets/images/Acrylic 3D lamp (1).png" alt="Acrylic 3D Lamp"><div class="cap"><strong>Acrylic 3D Lamp</strong></div></div>
+      <div class="gallery-item reveal"><img src="assets/images/Acrylic 3D lamp (2).png" alt="Acrylic 3D Lamp"><div class="cap"><strong>Acrylic 3D Lamp</strong></div></div>
+      <div class="gallery-item reveal"><img src="assets/images/wooden guest book (1).png" alt="Wooden Guest Book"><div class="cap"><strong>Wooden Guest Book</strong></div></div>
+      <div class="gallery-item reveal"><img src="assets/images/wooden guest book (2).png" alt="Wooden Guest Book"><div class="cap"><strong>Wooden Guest Book</strong></div></div>
     </div>
   </div>
 </section>
 
-<!-- Lightbox -->
 <div class="lightbox" id="lightbox">
   <button class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
   <img src="" alt="" id="lightboxImg">
 </div>
 
-<!-- ============ CONTACT ============ -->
+<!-- CONTACT -->
 <section class="contact" id="contact">
   <div class="wrap contact-grid">
-    <div class="contact-info">
+    <div class="contact-info reveal">
       <p class="eyebrow">Get In Touch</p>
       <h2 style="font-size:clamp(1.9rem,3.2vw,2.5rem); margin:16px 0 26px;">Let's make<br>something together.</h2>
-      <p style="color:rgba(24,16,13,0.68); max-width:44ch; margin-bottom:10px;">Have a design brief, a laser-cut idea, or a gift you can't find anywhere else? Send the details below or reach out directly.</p>
+      <p style="color:rgba(24,16,13,0.68); max-width:44ch; margin-bottom:10px;">Have a design brief, a laser cut idea, or a gift you cannot find anywhere else? Send the details below or reach out directly.</p>
 
       <div class="info-row">
         <span class="ic">&#9993;</span>
-        <div>
-          <span class="label">Email</span>
-          <a href="mailto:glory.laser@yahoo.com">glory.laser@yahoo.com</a>
-        </div>
+        <div><span class="label">Email</span><a href="mailto:glory.laser@yahoo.com">glory.laser@yahoo.com</a></div>
       </div>
       <div class="info-row">
         <span class="ic">&#9742;</span>
-        <div>
-          <span class="label">Phone</span>
-          <a href="tel:+447405438650">07405 438650</a>
-        </div>
+        <div><span class="label">Phone</span><a href="tel:+447405438650">07405 438650</a></div>
       </div>
       <div class="info-row">
         <span class="ic">&#9998;</span>
-        <div>
-          <span class="label">Also Known As</span>
-          <span class="txt">Remon Hanna &middot; Remon Anwer</span>
-        </div>
+        <div><span class="label">Also Known As</span><span class="txt">Remon Hanna &middot; Remon Anwer</span></div>
       </div>
     </div>
 
-    <form class="contact-form" id="contactForm" action="https://formspree.io/f/xqerdlpb" method="POST">
+    <form class="contact-form reveal" id="contactForm" action="https://formspree.io/f/xqerdlpb" method="POST">
       <div class="form-two">
         <div class="form-row">
           <label for="name">Name</label>
@@ -978,7 +867,7 @@
       </div>
       <div class="form-row">
         <label for="message">Message</label>
-        <textarea id="message" name="message" required placeholder="Tell me a bit about what you'd like made..."></textarea>
+        <textarea id="message" name="message" required placeholder="Tell me a bit about what you would like made..."></textarea>
       </div>
       <button type="submit" class="btn btn-primary form-submit">Send Message</button>
       <p class="form-note">Prefer email? Write directly to <a href="mailto:glory.laser@yahoo.com" style="color:var(--ember)">glory.laser@yahoo.com</a></p>
@@ -987,7 +876,11 @@
   </div>
 </section>
 
-<!-- ============ FOOTER ============ -->
+<div class="signature-close reveal">
+  <p class="sig-name">Remon Hanna</p>
+  <p class="sig-caption">Graphic Designer &amp; Laser Cutting Artisan</p>
+</div>
+
 <footer>
   <div class="wrap">
     <div class="footer-inner">
@@ -1013,10 +906,8 @@
 </footer>
 
 <script>
-  // Year
   document.getElementById('year').textContent = new Date().getFullYear();
 
-  // Mobile nav
   const burger = document.getElementById('burgerBtn');
   const navLinks = document.getElementById('navLinks');
   burger.addEventListener('click', () => {
@@ -1028,25 +919,6 @@
     burger.setAttribute('aria-expanded', 'false');
   }));
 
-  // Portfolio filter
-  const filterBtns = document.querySelectorAll('.filter-btn');
-  const galleryItems = document.querySelectorAll('.gallery-item');
-  filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      filterBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const filter = btn.dataset.filter;
-      galleryItems.forEach(item => {
-        if (filter === 'all' || item.dataset.cat === filter) {
-          item.classList.remove('hide');
-        } else {
-          item.classList.add('hide');
-        }
-      });
-    });
-  });
-
-  // Lightbox
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightboxImg');
   document.querySelectorAll('.gallery-item img').forEach(img => {
@@ -1060,7 +932,6 @@
   lightbox.addEventListener('click', (e) => { if (e.target === lightbox) lightbox.classList.remove('open'); });
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape') lightbox.classList.remove('open'); });
 
-  // Contact form (Formspree AJAX submit)
   const form = document.getElementById('contactForm');
   const status = document.getElementById('form-status');
   form.addEventListener('submit', async (e) => {
@@ -1068,29 +939,35 @@
     const data = new FormData(form);
     status.className = '';
     try {
-      const res = await fetch(form.action, {
-        method: 'POST',
-        body: data,
-        headers: { 'Accept': 'application/json' }
-      });
+      const res = await fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } });
       if (res.ok) {
-        status.textContent = "Thanks your message has been sent. I'll get back to you soon.";
+        status.textContent = "Thanks, your message has been sent. I will get back to you soon.";
         status.className = 'show ok';
         form.reset();
       } else {
         throw new Error('Form error');
       }
     } catch (err) {
-      status.textContent = "Something went wrong - please email glory.laser@yahoo.com directly.";
+      status.textContent = "Something went wrong. Please email glory.laser@yahoo.com directly.";
       status.className = 'show err';
     }
   });
 
-  // Nav background on scroll
   const nav = document.querySelector('.site-nav');
   window.addEventListener('scroll', () => {
     nav.style.boxShadow = window.scrollY > 40 ? '0 8px 24px -12px rgba(0,0,0,0.4)' : 'none';
   });
+
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  revealEls.forEach(el => io.observe(el));
 </script>
 
 </body>
